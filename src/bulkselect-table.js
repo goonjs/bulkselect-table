@@ -14,21 +14,21 @@
 		};
 			
 		obj.on('click', '.'+settings.selectAllClass, function(e) {
-			var checked = $(this).attr('checked'),
+			var checked = $(this).is(':checked'),
 				items = obj.find('.'+settings.checkboxClass);
 			
-			items.attr('checked', checked || null);
+			items.prop('checked', checked);
 			
 			if(checked)
-				items.addClass(settings.selectedClass);
+				items.parents(settings.parentTag).addClass(settings.selectedClass);
 			else
-				items.removeClass(settings.selectedClass);
+				items.parents(settings.parentTag).removeClass(settings.selectedClass);
 		});
 
 		obj.on('click', '.'+settings.checkboxClass, function(e) {
 			var o = $(e.target);
 			clickingElement = o;
-			clickingChecked = o.attr('checked');
+			clickingChecked = o.is(':checked');
 			clickingIndex = o.parents(settings.parentTag).index();
 			
 			applyClass(clickingElement.parents(settings.parentTag), settings.selectedClass, clickingChecked);
@@ -49,10 +49,10 @@
 					list = start.prevUntil(end);
 				}
 
-				lastClickedElement.attr('checked', clickingChecked || null);
+				lastClickedElement.prop('checked', clickingChecked);
 				applyClass(start, settings.selectedClass, clickingChecked);
 
-				list.find('.'+settings.checkboxClass).attr('checked', clickingChecked || null);
+				list.find('.'+settings.checkboxClass).prop('checked', clickingChecked);
 				applyClass(list, settings.selectedClass, clickingChecked);
 				
 				obj.trigger(clickingChecked ? 'bulk-select' : 'bulk-deselect', {
