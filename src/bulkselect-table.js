@@ -9,9 +9,12 @@
 		var applyClass = function(obj, className, checked) {
 			if(checked)
 				obj.addClass(className)
+				obj.addClass(className);
 			else
 				obj.removeClass(className)
 		}
+				obj.removeClass(className);
+		};
 			
 		obj.on('click', '.'+settings.selectAllClass, function(e) {
 			var checked = $(this).attr('checked'),
@@ -24,6 +27,7 @@
 			else
 				items.removeClass(settings.selectedClass);
 		})
+		});
 
 		obj.on('click', '.'+settings.checkboxClass, function(e) {
 			var o = $(e.target);
@@ -61,6 +65,8 @@
 					'list': list,
 					'applied': Math.abs(clickingIndex-lastClickedIndex)
 				})
+					'applied': Math.abs(clickingIndex-lastClickedIndex+1)
+				});
 			}
 			
 			lastClickedElement = clickingElement;
@@ -68,6 +74,8 @@
 			lastClickedIndex = clickingIndex;
 		})
 	}
+		});
+	};
 	
 	$.fn.bulkSelectTable = function(options) {
 		var settings = $.extend({
@@ -81,5 +89,7 @@
 			$.applyBulkSelectTable($(this), settings);
 		})
 	}
+		});
+	};
 	
 }(jQuery));
