@@ -1,0 +1,179 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+	<style type="text/css" rel="stylesheet">
+		tr.selected td { background: rgba(65,131,196,0.4); }
+		tr.selected2 td { color: #aaa; text-decoration: line-through; }
+	</style>
+
+	<script src="src/bulkselect-table.js"></script>
+</head>
+<body>
+	<table id="main-table" class="table table-condensed">
+		<thead>
+			<tr>
+				<td colspan="3">
+					<input type="checkbox" class="selectall"/>
+				</td>
+				<td>
+					<input type="checkbox" class="selectall2"/>
+				</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>
+					<input type="checkbox" class="selectable"/>
+				</td>
+				<td>
+					A1
+				</td>
+				<td>
+					A2
+				</td>
+				<td>
+					<input type="checkbox" class="selectable2"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="checkbox" class="selectable"/>
+				</td>
+				<td>
+					B1
+				</td>
+				<td>
+					B2
+				</td>
+				<td>
+					<input type="checkbox" class="selectable2"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="checkbox" class="selectable"/>
+				</td>
+				<td>
+					C1
+				</td>
+				<td>
+					C2
+				</td>
+				<td>
+					<input type="checkbox" class="selectable2"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="checkbox" class="selectable"/>
+				</td>
+				<td>
+					D1
+				</td>
+				<td>
+					D2
+				</td>
+				<td>
+					<input type="checkbox" class="selectable2"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="checkbox" class="selectable"/>
+				</td>
+				<td>
+					E1
+				</td>
+				<td>
+					E2
+				</td>
+				<td>
+					<input type="checkbox" class="selectable2"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="checkbox" class="selectable"/>
+				</td>
+				<td>
+					F1
+				</td>
+				<td>
+					F2
+				</td>
+				<td>
+					<input type="checkbox" class="selectable2"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="checkbox" class="selectable"/>
+				</td>
+				<td>
+					G1
+				</td>
+				<td>
+					G2
+				</td>
+				<td>
+					<input type="checkbox" class="selectable2"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="checkbox" class="selectable"/>
+				</td>
+				<td>
+					H1
+				</td>
+				<td>
+					H2
+				</td>
+				<td>
+					<input type="checkbox" class="selectable2"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="checkbox" class="selectable"/>
+				</td>
+				<td>
+					I1
+				</td>
+				<td>
+					I2
+				</td>
+				<td>
+					<input type="checkbox" class="selectable2"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="checkbox" class="selectable"/>
+				</td>
+				<td>
+					J1
+				</td>
+				<td>
+					J2
+				</td>
+				<td>
+					<input type="checkbox" class="selectable2"/>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+<script>
+$('#main-table').bulkSelectTable();
+$('#main-table').bulkSelectTable({
+	checkboxClass: 'selectable2',
+	selectAllClass: 'selectall2',
+	selectedClass: 'selected2'
+});
+</script>
+</body>
+</html>
