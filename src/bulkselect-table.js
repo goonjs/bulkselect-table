@@ -8,11 +8,8 @@
 			
 		var applyClass = function(obj, className, checked) {
 			if(checked)
-				obj.addClass(className)
 				obj.addClass(className);
 			else
-				obj.removeClass(className)
-		}
 				obj.removeClass(className);
 		};
 			
@@ -26,7 +23,6 @@
 				items.addClass(settings.selectedClass);
 			else
 				items.removeClass(settings.selectedClass);
-		})
 		});
 
 		obj.on('click', '.'+settings.checkboxClass, function(e) {
@@ -63,8 +59,6 @@
 					'start': start,
 					'end': end,
 					'list': list,
-					'applied': Math.abs(clickingIndex-lastClickedIndex)
-				})
 					'applied': Math.abs(clickingIndex-lastClickedIndex+1)
 				});
 			}
@@ -72,8 +66,6 @@
 			lastClickedElement = clickingElement;
 			lastClickedChecked = clickingChecked;
 			lastClickedIndex = clickingIndex;
-		})
-	}
 		});
 	};
 	
@@ -87,8 +79,6 @@
 		
 		return this.each(function(){
 			$.applyBulkSelectTable($(this), settings);
-		})
-	}
 		});
 	};
 	
