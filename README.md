@@ -3,22 +3,24 @@ bulkselect-table
 
 Shift-click to check/uncheck multiple checkboxs
 
-Simplest way:
-
+As easy as:
+```js
 $('#table').bulkSelectTable();
+```
 
-// For the simplest way. You also need to add 'selectable' class in any checkbox you need to apply shift-Click
+and:
+* Add class 'selectable' to any checkbox you need to apply shift-Click
+* Add class 'selectall' for the primary checkbox to select all others checkbox
+* Also note that bulkSelectTable look for 'tr' as parent of each row and the 'selected' class will be applied for the row that are checked
 
-// You can also add 'selectall' class for the primary checkbox to select all others checkbox
 
-// Also note that bulkSelectTable look for 'tr' as parent of each row and the 'selected' class will be applied for the row that are checked
-
-Configurable:
-
+Configuration:
+```js
 $('#table').bulkSelectTable({
-  checkboxClass: 'anotherClass', // class name that will be applied Shift-Click Behavior
-  selectedClass: 'appliedClass', // class name that will be applied to Container
-  parentTag: 'tr.row', // selector that will be used to find as Container
+  checkboxClass: 'anotherClass', // class name for any checkbox to use Shift-Click Behavior
+  selectedClass: 'appliedClass', // class name that will be applied to the selected container
+  parentTag: 'tr.row', // container selector
   
   selectAllClass: 'anotherSelectAllClass' // class name that will be applied SelectAll Behavior
 });
+```
